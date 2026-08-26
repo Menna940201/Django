@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'about.apps.AboutConfig',
     'education.apps.EducationConfig',
     'skills.apps.SkillsConfig',
-    'work.apps.WorkConfig'
+    'work.apps.WorkConfig',
+    'projects.apps.ProjectsConfig'
 ]
 
 MIDDLEWARE = [
@@ -54,12 +55,13 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+import os
 ROOT_URLCONF = 'protofolio.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

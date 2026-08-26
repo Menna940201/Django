@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details</title>
+    <style>
+        .container{
+            background-color: #66A3BF;
+        }
+    </style>
+</head>
+<body>
+    {% block home %}
+    <div class="container">
+        <h1>Project Page</h1>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{project.title}}</h5>
+                <p class="card-text">{{project.description}}</p>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+</html>

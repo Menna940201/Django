@@ -21,6 +21,7 @@ from about.views import show_about_me
 from education.views import show_education
 from skills.views import show_skills
 from work.views import show_experience
+from projects.views import show_all_projects, show_projects
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,5 +29,7 @@ urlpatterns = [
     path('show_about_me/', show_about_me, name='about'),
     path('show_education/', show_education, name='education'),
     path('show_skills/', show_skills, name='skills'),
-    path('show_experience/', show_experience, name='experience')
+    path('show_experience/', show_experience, name='experience'),
+    path('project/<int:num>', show_projects, name = 'project'),
+    path('project/', show_all_projects, name = 'projects'),
 ]

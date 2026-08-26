@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <style>
+        body{
+            background:
+                radial-gradient(circle at 85% 18%, #0ea5e94a, transparent 25%),
+                radial-gradient(circle at 12% 80%, #14b8a63d, transparent 28%),
+                linear-gradient(135deg, #0b1220, #111b2e);
+            color: #a9bad0;
+        }
+        header{
+            text-align: center;
+            align-items: center;
+            font-family: 'inherit';
+            font-size: 20px;
+            height: 80px;
+            margin-top: 50px;
+            
+        }
+        .navbar{
+            margin: 10px;
+            text-decoration: none;
+            color: white;
+        }
+        .navbar:hover{
+            color: #2F578A;
+            background-color: #fbbf24;
+            border-radius: 15px;
+            padding: 20px;
+        }
+        div{
+            font-size: 40px;
+            width: 70%;
+            margin: auto;
+        }
+        hr{
+            width: 70%;
+        }
+        .card-text, .card-title{
+            background-color: #080d18;
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid #263752;
+            width: 600px;
+            transition:1s;
+        }
+        .card-title:hover, .card-text:hover{
+            border-color:  #38bff8;
+            scale: 1.1;
+        }
+        .site-footer {
+            background: #060a13;
+            color: #a9bad0;
+            margin-top: 60px;
+            }
+
+            .footer-container {
+            width: min(1100px, 90%);
+            margin: auto;
+            }
+
+            .footer-social {
+            border-bottom: 1px solid #263752;
+            padding: 18px 0;
+            }
+
+            .social-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            }
+
+            .social-content p {
+            margin: 0;
+            color: #e5edf7;
+            }
+
+            .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            }
+
+            .social-links a,
+            .footer-column a {
+            color: #a9bad0;
+            text-decoration: none;
+            transition: color 0.2s ease;
+            }
+
+            .social-links a:hover,
+            .footer-column a:hover {
+            color: #2dd4bf;
+            }
+
+            .footer-columns {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 35px;
+            padding: 50px 0;
+            }
+
+            .footer-column {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 9px;
+            }
+
+            .footer-column h3 {
+            color: #f8fbff;
+            font-size: 1.1rem;
+            margin: 0 0 8px;
+            }
+
+            .footer-column p {
+            margin: 0;
+            }
+
+            .footer-bottom {
+            border-top: 1px solid #263752;
+            text-align: center;
+            padding: 18px;
+            }
+
+            .footer-bottom p {
+            margin: 0;
+            }
+
+            @media (max-width: 768px) {
+            .social-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .footer-columns {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+            .footer-column.company,
+            .footer-column:last-child {
+                grid-column: span 2;
+            }
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/home" class="navbar">Home</a>
+        <a href="/show_about_me" class="navbar">about</a>
+        <a href="/show_education" class="navbar">Education</a>
+        <a href="/show_skills" class="navbar">Skills</a>
+        <a href="/show_experience" class="navbar">Work Experience</a>
+        <a href="/project" class="navbar">Projects</a>
+    </header>
+    <hr>
+    {% block home %}
+    {% endblock %}
+    <hr>
+    <footer class="site-footer">
+        <div class="footer-social">
+            <div class="footer-container social-content">
+                <p>Connect with me on social media</p>
+    
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/menna-al-husseini-1639a031b/" aria-label="LinkedIn">LinkedIn</a>
+                    <a href="https://github.com/Menna940201" aria-label="GitHub">GitHub</a>
+                    <a href="mennaalhusseini@gmail.com" aria-label="Email">Email</a>
+                </div>
+            </div>
+        </div>
+    
+        <div class="footer-container footer-columns">
+            <div class="footer-column company">
+                <h3>Menna Alhusseini</h3>
+                <p>
+                    AI Engineer passionate about building intelligent, scalable solutions
+                    using machine learning, deep learning, and data-driven technologies.
+                </p>
+            </div>
+    
+            <div class="footer-column">
+                <h3>Navigation</h3>
+                <a href="/home">Home</a>
+                <a href="/show_education">Education</a>
+                <a href="/show_skills">Skills</a>
+                <a href="/show_experience">Work Experience</a>
+                <a href="/project">Projects</a>
+            </div>
+    
+            <div class="footer-column">
+                <h3>Expertise</h3>
+                <p>Machine Learning</p>
+                <p>Deep Learning</p>
+                <p>Natural Language Processing</p>
+                <p>Data Analysis</p>
+            </div>
+    
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <p>📍 Minia, Egypt</p>
+                <a href="mailto:alex@example.com">mennaalhusseini@gmail.com</a>
+                <a href="tel:+201234567890">+20 106 303 2940</a>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>© 2026 All rights reserved.</p>
+        </div>
+    </footer>
+    </body>
+    
+    </html>

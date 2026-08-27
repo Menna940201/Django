@@ -30,6 +30,6 @@ urlpatterns = [
     path('show_education/', show_education, name='education'),
     path('show_skills/', show_skills, name='skills'),
     path('show_experience/', show_experience, name='experience'),
-    path('project/<int:num>', show_projects, name = 'project'),
+    path('project/<int:id>', show_projects, name = 'project'),
     path('project/', show_all_projects, name = 'projects'),
 ]
